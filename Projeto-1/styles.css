@@ -109,3 +109,70 @@ header{
     background-size: cover; 
 }
 
+@media screen and (max-width: 400px)
+{
+    
+    .logo
+    {
+    
+        cursor: pointer;
+        margin-left: 0%;
+    }
+    
+    .nav_links li
+    {
+        display: flex-wrap;
+        margin-left: 0px;
+        padding: 3px 50px;
+    }
+    
+    
+    .nav_links li a
+    {
+    
+        align-items: center;
+        transition: all 0.3s ease 0s;
+        margin-left: 1px;
+        
+    }
+    
+        
+    .leftDiv
+    {
+        flex-wrap: wrap-reverse;
+        
+        display: flex;
+        width: 400px;
+        height: 800px;
+    }
+    
+    .rightDiv
+    {
+        flex-wrap: wrap-reverse;
+        
+        display: flex;
+        width: 400px;
+        height: 800px;
+        background: url('banner-iphone.png') no-repeat center center fixed; 
+    }
+    
+    .centerDiv
+    {
+        width: 60%;
+    }
+    
+    #disc
+    {
+        display:none;
+    }
+    
+    #menu
+    {
+        display:flex;
+    }
+    
+    header
+    {
+        padding: 13px 0px;
+    }
+}
