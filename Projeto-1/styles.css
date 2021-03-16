@@ -109,6 +109,29 @@ header{
     background-size: cover; 
 }
 
+.button {
+    background-color: rgb(213, 220, 230); 
+    border: none;
+    color: rgba(43,105,122,255);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.button1 {
+    border-radius: 6px;
+}
+
+.button:hover{
+    background-color: white;
+    color: rgba(43,105,122,255);
+}
+
 @media screen and (max-width: 360px)
 {
     
