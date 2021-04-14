@@ -46,9 +46,14 @@ body{
 
 .description{
 	font-size: 14px;
-	font-weight: 300;
-	color: #fff; 
+	font-weight: 300; 
 	line-height: 30px;
+}
+.description-primary{
+	color: #fff;
+}
+.description-second{
+	color: #7f8c8d;
 }
 .btn{
 	border-radius: 15px;
@@ -58,6 +63,9 @@ body{
 	padding: 10px 50px;
 	cursor: pointer;
 	font-weight: bold;   
+	width: 150px; 
+	align-self: center;
+	border-width: 0px;
 }
 .btn-primary{
 	background-color: transparent;
@@ -66,6 +74,14 @@ body{
 .btn-primary:hover{
 	background-color: #fff;
 	color: #58af9b;
+}
+.btn-second{
+	background-color: #58af9b;
+	border: 1px solid #58af9b;
+}
+.btn-second: hover{
+	background-color: #fff;
+	border: 1px solid #58af9b;
 }
 .first-content{
 	display: flex;
@@ -96,6 +112,13 @@ body{
 .form{
 	display:flex;
 	flex-direction:column;
+	width: 55%;
+}
+.form input{
+	height: 45px;
+	border: none;
+	background-color: #ecf0f1;
+	margin: 8px;
 }
 
 .second-content{
