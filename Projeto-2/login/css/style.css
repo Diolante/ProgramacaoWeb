@@ -19,7 +19,7 @@ body{
 .content{
 	background-color: #fff;
 	border-radius: 15px;
-	width: 80%;
+	width: 960px;
 	height: 50%;
 	justify-content: space-between;
 	align-items: center;
@@ -116,9 +116,15 @@ body{
 }
 .form input{
 	height: 45px;
+	width: 100%;
 	border: none;
 	background-color: #ecf0f1;
-	margin: 8px;
+}
+
+.label-input{
+	background-color: #ecf0f1;
+	display: flex;
+	align-item: center; 
 }
 
 .second-content{
