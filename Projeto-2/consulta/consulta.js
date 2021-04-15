@@ -11,16 +11,18 @@ window.onload = function() {
     
     for (var i = 0; i < 12; i++) {
      
-        var tbodyRef = document.getElementById('tblUsuarios').getElementsByTagName('tbody')[0];
-        var newRow = tbodyRef.insertRow();
-
-        var newCell = newRow.insertCell();
-        var pix = document.createTextNode(response.data[i].id);
-        newCell.appendChild(pix);
+        user = Math.round(Math.random() * (19 - 1) + 1);
         
-        var newCell = newRow.insertCell();
-        var nome = document.createTextNode(response.data[i].name);
-        newCell.appendChild(nome);
+        var tbodyRef = document.getElementById('tblUsuarios').getElementsByTagName('tbody')[0];
+        var novaLinha = tbodyRef.insertRow();
+
+        var novaCelula = newRow.insertCell();
+        var posicao = document.createTextNode(response.data[user].id);
+        novaCelula.appendChild(posicao);
+        
+        var novaCelula = newRow.insertCell();
+        var nome = document.createTextNode(response.data[user].name);
+        novaCelula.appendChild(nome);
     }
  }
 
