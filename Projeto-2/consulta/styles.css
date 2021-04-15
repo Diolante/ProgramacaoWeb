@@ -87,10 +87,10 @@ header{
 
 #menu_button
 {
-        display: none;
+    display: none;
 }
 
-#page_button
+#btnMostreUsuarios
 {
     display: center;
 }
@@ -143,6 +143,8 @@ header{
     height: 550px;
     background-color: rgb(242, 252, 252);
     background-size: cover; 
+    border-style: solid;
+    border-width: 1px;
 }
 
 table{
@@ -154,7 +156,7 @@ table{
 
 td, th{
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 
@@ -294,4 +296,3 @@ tr:nth-child(even){
         overflow: hidden;
     }
 }
-
