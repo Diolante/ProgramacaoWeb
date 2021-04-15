@@ -16,11 +16,11 @@ window.onload = function() {
         var tbodyRef = document.getElementById('tblUsuarios').getElementsByTagName('tbody')[0];
         var novaLinha = tbodyRef.insertRow();
 
-        var novaCelula = newRow.insertCell();
+        var novaCelula = novaLinha.insertCell();
         var posicao = document.createTextNode(response.data[user].id);
         novaCelula.appendChild(posicao);
         
-        var novaCelula = newRow.insertCell();
+        var novaCelula = novaLinha.insertCell();
         var nome = document.createTextNode(response.data[user].name);
         novaCelula.appendChild(nome);
     }
