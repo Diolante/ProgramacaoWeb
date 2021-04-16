@@ -14,3 +14,18 @@ btnSignup.addEventListener("click", function () {
 })
 
 
+if (localStorage.Email) {
+	document.getElementById('Email').value = localStorage.Email;
+}
+if (localStorage.senha) {
+	document.getElementById('senha').value = localStorage.senha;
+}
+
+var salvarData = function() {
+	var Email = document.getElementById('Email').value;
+	var senha = document.getElementById('senha').value;
+	localStorage.setItem('Email', Email);
+	localStorage.setItem('senha', senha);
+};
+
+document.onchange = salvarData;
