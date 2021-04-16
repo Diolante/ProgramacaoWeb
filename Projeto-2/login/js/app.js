@@ -17,15 +17,15 @@ btnSignup.addEventListener("click", function () {
 if (localStorage.Email) {
 	document.getElementById('Email').value = localStorage.Email;
 }
-if (localStorage.senha) {
-	document.getElementById('senha').value = localStorage.senha;
+if (localStorage.pwd) {
+	document.getElementById('pwd').value = localStorage.pwd;
 }
 
 var salvarData = function() {
 	var Email = document.getElementById('Email').value;
-	var senha = document.getElementById('senha').value;
+	var pwd = document.getElementById('pwd').value;
 	localStorage.setItem('Email', Email);
-	localStorage.setItem('senha', senha);
+	localStorage.setItem('pwd', pwd);
 };
 
 document.onchange = salvarData;
