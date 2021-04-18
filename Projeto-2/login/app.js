@@ -62,6 +62,6 @@ sendDataLogIn = (username,pwd) => {
     })
     .catch(err => {
       console.log(err);
-	  alert('Usuário inexistente! ' + err)
+	  alert('Usuário inexistente! ' + err.error)
     });
 };
