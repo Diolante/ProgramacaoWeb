@@ -1,8 +1,24 @@
 window.onload = function() {
-    document.getElementById("btnMostreUsuarios").addEventListener("click", getUsuarios, false);
+    document.getElementById("btnMostreListaEspera").addEventListener("click", getUsuarios, false);
+        
+    var urlParams = new URLSearchParams(window.location.hash.replace("#","?"));
+    var token = urlParams.get('token');
+    
+    var btnMostreListaEspera = document.getElementById("btnMostreListaEspera");
+    var infoLogin = document.getElementById("loginRequirementInfo");
+    
+    console.log(token)
+    
+    if(token == 'null')
+    {
+        btnMostreListaEspera.disabled = true; 
+        infoLogin.style.visibility = "visible";
+    }   
 }
 
- function popularTabela(response){
+
+
+function popularTabela(response){
      
     document.getElementById("tblUsuarios").style.visibility = "visible";
     document.getElementById("headerTable").style.visibility = "visible";
