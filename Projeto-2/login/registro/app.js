@@ -1,21 +1,48 @@
 window.onload = function() {
+    
 	document.getElementById("signin").addEventListener("click", salvarData, false);
-	if (localStorage.username) {
-		document.getElementById('username').value = localStorage.username;
+    
+	if (sessionStorage.username) {
+		document.getElementById('username').value = sessionStorage.username;
 	}
-	if (localStorage.pwd) {
-		document.getElementById('pwd').value = localStorage.pwd;
+	if (sessionStorage.pwd) {
+		document.getElementById('pwd').value = sessionStorage.pwd;
 	}
 }
 
 function salvarData() {
 	var username = document.getElementById('username').value;
 	var pwd = document.getElementById('pwd').value;
-	localStorage.setItem('username', username);
-	localStorage.setItem('pwd', pwd);
+    
+	sessionStorage.setItem('username', username);
+	sessionStorage.setItem('pwd', pwd);
 	sendDataLogIn(username,pwd);
 };
 
+function validaCampos(){
+
+	if(validaEmail() && validaSenha())
+	{
+		document.getElementById("signin").disabled = false;
+	}
+	else
+	{
+		document.getElementById("signin").disabled = true; 		
+	}
+/*     if(document.getElementById('username').value.length < 3 || 
+        document.getElementById('username').value.length > 20)
+    {
+        document.getElementById("myPopup").classList.toggle("show");
+    }
+    else if(document.getElementById('pwd').value.length < 3)
+    {
+        document.getElementById("myPopup2").classList.toggle("show");
+    }
+    else
+    {  
+        salvarData();
+    } */
+}
 
 sendHttpRequest = (method, url, data) => 
 {
@@ -51,10 +78,39 @@ sendDataLogIn = (username,pwd) => {
   })
     .then(responseData => {
       console.log(responseData);
-	  alert('Usuário registrado!')
+	  //alert('Usuário registrado!')
     })
     .catch(err => {
       console.log(err);
-	  alert(err.error)
+	  //alert(err.error)
     });
 };
+
+
+function validaEmail()
+{
+	if(document.getElementById('username').value.includes('@'))
+	{
+	    document.getElementById('mensagem').style.visibility = "hidden";
+		return true; 
+	}
+	else
+	{
+		document.getElementById('mensagem').style.visibility = "visible";
+		return false; 
+	}
+}
+
+function validaSenha()
+{
+	if(document.getElementById('pwd').value.length > 5)
+	{
+	    document.getElementById('mensagem_senha').style.visibility = "hidden";
+		return true; 
+	}
+	else
+	{
+		document.getElementById('mensagem_senha').style.visibility = "visible";
+		return false; 
+	}
+}
