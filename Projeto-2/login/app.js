@@ -1,19 +1,110 @@
 window.onload = function() {
-	document.getElementById("signin").addEventListener("click", salvarData, false);
-	if (localStorage.username) {
-		document.getElementById('username').value = localStorage.username;
+        
+    document.getElementById("signin").addEventListener("click", salvarData, false);
+    //document.getElementById("redirectConsulta").addEventListener("click", concatenaToken, false);
+	if (sessionStorage.username) {
+		document.getElementById('username').value = sessionStorage.username;
 	}
-	if (localStorage.pwd) {
-		document.getElementById('pwd').value = localStorage.pwd;
+	if (sessionStorage.pwd) {
+		document.getElementById('pwd').value = sessionStorage.pwd;
+	}
+    
+
+	if(sessionStorage.getItem('token') != null){
+        var mensagemBoaVindas = "Logado como:  " + sessionStorage.getItem('username');
+        document.getElementById('mensagem_logado').innerHTML = mensagemBoaVindas;
+        document.getElementById('mensagem_logado').style.visibility = "visible";
+		document.getElementById('signin').disabled = true;
+		document.getElementById('username').disabled = true;
+		document.getElementById('pwd').disabled = true;
+    }
+}
+
+
+/* function desativaPopup()
+{
+    if(document.getElementById("myPopup").style.visibility === "visible"){
+        document.getElementById("myPopup").toggle("show");
+    }
+    
+    if(document.getElementById("myPopup2").style.visibility === "visible"){
+        document.getElementById("myPopup2").toggle("show");
+    }
+} */
+
+function concatenaToken(){
+    
+    var consultaUrl = "../consulta/consulta.html";
+    
+    var consultaUrlTokenizada = consultaUrl + '#token=' + sessionStorage.getItem('token');
+        
+    //document.getElementById("redirectConsulta").setAttribute("href", consultaUrlTokenizada );
+	window.location.replace(consultaUrlTokenizada);
+   
+}
+
+function validaCampos(){
+	
+	if(validaEmail() && validaSenha())
+	{
+		document.getElementById("signin").disabled = false;
+	}
+	else
+	{
+		document.getElementById("signin").disabled = true; 		
+	}
+/*     if(document.getElementById('username').value == null || document.getElementById('username').value.length < 3 || 
+        document.getElementById('username').value.length > 20)
+    {
+        document.getElementById("myPopup").classList.toggle("show");
+    }
+    else if(document.getElementById('pwd').value == null || document.getElementById('pwd').value.length < 3)
+    {
+        document.getElementById("myPopup2").classList.toggle("show");
+    }
+    else
+    {  
+        salvarData();
+    } */
+}
+function validaEmail()
+{
+	if(document.getElementById('username').value.includes('@'))
+	{
+	    document.getElementById('mensagem').style.visibility = "hidden";
+		return true; 
+	}
+	else
+	{
+		document.getElementById('mensagem').style.visibility = "visible";
+		return false; 
+	}
+}
+
+function validaSenha()
+{
+	if(document.getElementById('pwd').value.length > 5)
+	{
+	    document.getElementById('mensagem_senha').style.visibility = "hidden";
+		return true; 
+	}
+	else
+	{
+		document.getElementById('mensagem_senha').style.visibility = "visible";
+		return false; 
 	}
 }
 
 function salvarData() {
-	var username = document.getElementById('username').value;
-	var pwd = document.getElementById('pwd').value;
-	localStorage.setItem('username', username);
-	localStorage.setItem('pwd', pwd);
-	sendDataLogIn(username,pwd);
+    
+        var username = document.getElementById('username').value;
+        var pwd = document.getElementById('pwd').value;
+        
+        
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('pwd', pwd);
+        
+        sendDataLogIn(username, pwd);
 };
 
 
@@ -44,17 +135,20 @@ sendHttpRequest = (method, url, data) =>
   return promise;
 };
 
-sendDataLogIn = (username,pwd) => {
+sendDataLogIn = (username, pwd) => {
   sendHttpRequest('POST', 'https://reqres.in/api/login', {
     email: username,
     password: pwd
   })
     .then(responseData => {
-      console.log(responseData);
-	  alert('Usuário logado!')
+      sessionStorage.setItem('token', responseData.token);
+      console.log(sessionStorage.getItem('token'));
+	  concatenaToken();
+	  //alert('Usuário logado!')
     })
     .catch(err => {
       console.log(err);
-	  alert(err.error)
+	  //alert(err.error)
+		document.getElementById('mensagem_login').style.visibility = "visible";
     });
 };
