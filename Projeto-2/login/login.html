@@ -11,21 +11,38 @@
 </head>
 <body>
     <main class="container">
+    
+        <div class="popup">
+            <span class="popuptext" id="myPopup">O E-Mail deve possuir de 3 à 20 caracteres!</span>
+        </div>
+        
+        <div class="popup">
+            <span class="popuptext" id="myPopup2">A Senha deve ser maior que 3 caracteres!</span>
+        </div>
+		<center>
+			<span id="mensagem_login" style="visibility: hidden; color: red" >Usuário inválido</span>
+			<br />
+            <span id="mensagem_logado" style="visibility: hidden; color: green" ></span>
+		</center>
         <h2>Login</h2>
         <form action="" method="POST">
             <div class="input-field">
 				<i class="far fa-envelope icon-modify"></i>
-                <input type="text" name="username" id="username" placeholder="Email" required maxlength = "25" minlength = "2">
+                <input type="text" name="username" id="username" placeholder="Email" onchange="validaCampos()">
+				<span id="mensagem" style="visibility: hidden; color: red" >Email deve conter @</span>
                 <div class="underline"></div>
             </div>
             <div class="input-field">
 				<i class="fas fa-lock icon-modify"></i>
-                <input type="password" id="pwd" placeholder="Senha" required maxlength = "25" minlength = "2">
-                <div class="underline"></div>
+                <input type="password" name="pwd" id="pwd" placeholder="Senha" onchange="validaCampos()">
+                <span id="mensagem_senha" style="visibility: hidden; color: red" >Senha deve conter pelo menos 5 digitos</span>
+				<div class="underline"></div>
             </div>
 
-            <input type="button" id ="signin" value="Continue">
+            <input type="button" id ="signin"  value="Continue">
+			
 			<a href="registro/register.html">Registre-se!</a>
+            <!-- <a id="redirectConsulta" href="../consulta/consulta.html">Clica</a> -->
         </form>
 		
     </main>
