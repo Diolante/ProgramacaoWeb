@@ -25,7 +25,7 @@ app.post('/nova_publicacao', novaPublicacaoRoute.novaPublicacao);
 app.get('/carrega_publicacoes/:token', carregaPublicacoesRoute.carregaPublicacoes);
 
 
-mongoose.connect("mongodb://Heroku_Login:1q2w3e4r5t@projeto3-db-shard-00-00.fvhct.mongodb.net:27017?ssl=true&replicaSet=atlas-qic1xf-shard-0&authSource=admin&retryWrites=true&w=majority", {
+mongoose.connect("mongodb://Herokü_Login:1q2w4334r5t@projeto3-db-shard-00-00.fvhct.mongodb.net:27017?ssl=true&replicaSet=atlas-qic1xf-shard-0&authSource=admin&retryWrites=true&w=majority", {
                     useUnifiedTopology: true, 
                     useNewUrlParser: true,
                     useCreateIndex: true}).then(console.log("Conectado ao Mongoose DB!"));
