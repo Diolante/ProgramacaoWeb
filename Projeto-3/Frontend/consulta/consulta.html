@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <meta http-equiv='cache-control' content='no-cache'> 
+        <meta http-equiv='expires' content='0'> 
+        <meta http-equiv='pragma' content='no-cache'>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-slace=1">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        
+        <script type="text/javascript" src="consulta.js"></script>
+        
+        <title>N26 - Consulta</title>
+    </head>
+    
+    <body>
+     
+        <header>
+            <img id="menu" class="logo" src="more.png" alt="logo"></img>
+            <img onclick="window.location='../index/index.html'" class="logo" src="n26-logo.PNG" title="N26" alt="logo"></img>
+            <img id="disc" class="logo" src="br.png" alt="logo"></img>
+            <img id="disc" class="logo" src="language.png" alt="logo"></img>
+            
+            
+            <nav>
+                <ul class="nav_links"> 
+                    <li id="link" ><a href="/">Talentos</a></li>
+                    <li id="link" ><a href="/">Imprensa</a></li>
+                    <li id="link" ><a href="../login/login.html">Login</a></li>
+                    
+                    <li id="menu_button" ><button class="button button1"><b>Lista de Espera</b></button></li>
+                </ul>  
+            </nav>
+        </header>
+        
+        <div>
+            <div class="leftDiv">
+                <div class="centerDiv">
+                   
+                    <center>
+                        <h2> Veja nossa lista de espera ! </h2>
+                        <br/>
+                        <button id="btnMostreListaEspera" class="button button1"><b>Mostre-me !</b></button>
+                    </center>
+                    
+                </div>
+                
+                 
+            </div>
+            
+            <div class="rightDiv">
+                
+                    <br>
+                    <center><h2 id="headerTable" style="visibility: hidden;">Lista de Espera</h2></center>
+                    <center><h2 id="loginRequirementInfo" style="visibility: hidden;">Realize o Login para Consultar a Lista!</h2></center>
+                    <br>
+                    
+            
+                    
+                    
+
+                    <table id="tblUsuarios" style="width:100%">
+                    <center>
+                      <thead style="width:100%">
+                        <th>Posição</th>
+                        <th>Cliente</th>
+                      </thead>
+                      <tbody style="width:100%">
+                      </tbody>
+                      </center>
+                    </table>   
+  
+            </div>
+        </div>
+       
+
+    </body>
+</html> 

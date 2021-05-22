@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <title>N26 - Registrar</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="app.js"></script>
+	<link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <main class="container">
+    
+    
+        <div class="popup">
+            <span class="popuptext" id="myPopup">O E-Mail deve possuir de 3 à 20 caracteres!</span>
+        </div>
+        
+        <div class="popup">
+            <span class="popuptext" id="myPopup2">A Senha deve ser maior que 3 caracteres!</span>
+        </div>
+		<center>
+			<span id="mensagem_registro" style="visibility: hidden; color: green" >Usuário registrado!</span>
+			<br/>
+            <span id="mensagem_registro_erro" style="visibility: hidden; color: red" >Usuário cadastrado!</span>
+		</center>
+        <h2>Registre-se</h2>
+        <form action="" method="POST">
+            <div class="input-field">
+				<i class="far fa-envelope icon-modify"></i>
+                <input type="email" name="username" id="username" placeholder="Email" onchange="validaCampos()">
+				<span id="mensagem" style="visibility: hidden; color: red" >Email deve conter @</span>
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+				<i class="fas fa-lock icon-modify"></i>
+                <input type="password" name="pwd" id="pwd" placeholder="Senha" onchange="validaCampos()">
+				
+				<span id="mensagem_senha" style="visibility: hidden; color: red" >Senha deve conter pelo menos 5 digitos</span>
+                <div class="underline"></div>
+            </div>
+            <input type="button" id ="signin" value="Continue" >
+			<a href="../login.html">Fazer login!</a>
+        </form>
+    </main>
+</body>
+</html>
