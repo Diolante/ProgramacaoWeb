@@ -91,7 +91,6 @@ $(function(){
 		console.log($taval);
 		var urlParams = new URLSearchParams(window.location.hash.replace("#","?"));
 		var token = urlParams.get('token');
-		console.log(token);  
 		return '<li class="tweetcontainer">'+
 					'<img class="tweetprofimg" src="perfil.jpg">'+
 					'<span class="tweetprofname">'+Cookies.get('name')+'</span>'+
@@ -160,8 +159,7 @@ sendDataLogIn = (token, conteudo) => {
 	token: token
   })
     .then(responseData => {
-		var nameval = 'Just My Thoughts!';
-		console.log(nameval);
+		var nameval = 'N26 Banking - Ajuda';
     })
     .catch(err => {
       console.log(err.Err_Msg);
